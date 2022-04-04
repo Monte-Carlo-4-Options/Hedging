@@ -6,7 +6,7 @@ public class Option {
     private double ask;
     private double change;
     private double percentChange;
-    private int volume;
+    private Integer volume;
     private int openInterest;
     private double impliedVolatility;
     private boolean inTheMoney;
@@ -16,17 +16,17 @@ public class Option {
 
 
     public Option(String contractSymbol, String lastTradeDate, int strike, double lastPrice, double ask, double change,
-                    double percentChange, int volume, int openInterest, double impliedVolatility, boolean inTheMoney,
+                    double percentChange, Integer volume, int openInterest, double impliedVolatility, boolean inTheMoney,
                     String contractSize, String currency) {
         this.contractSymbol = contractSymbol;
         this.lastTradeDate = lastTradeDate;
         this.strike = strike;
         this.lastPrice = lastPrice;
         this.ask = ask;
-        this. change = change;
-        this. percentChange = percentChange;
+        this.change = change;
+        this.percentChange = percentChange;
         //csv seems to sometimes not have a volume value
-        if (volume == NULL) {
+        if (volume == null) {
             this.volume = 0;
         } else {
             this.volume = volume;
