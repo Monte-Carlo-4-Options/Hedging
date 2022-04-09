@@ -3,6 +3,7 @@ public class Option {
     private String lastTradeDate;
     private int strike;
     private double lastPrice;
+    private double bid;
     private double ask;
     private double change;
     private double percentChange;
@@ -15,13 +16,14 @@ public class Option {
 
 
 
-    public Option(String contractSymbol, String lastTradeDate, int strike, double lastPrice, double ask, double change,
+    public Option(String contractSymbol, String lastTradeDate, int strike, double lastPrice, double bid, double ask, double change,
                     double percentChange, Integer volume, int openInterest, double impliedVolatility, boolean inTheMoney,
                     String contractSize, String currency) {
         this.contractSymbol = contractSymbol;
         this.lastTradeDate = lastTradeDate;
         this.strike = strike;
         this.lastPrice = lastPrice;
+        this.bid = bid;
         this.ask = ask;
         this.change = change;
         this.percentChange = percentChange;
@@ -51,6 +53,9 @@ public class Option {
     }
     public double getLastPrice() {
         return this.lastPrice;
+    }
+    public double getBid() {
+        return this.bid;
     }
     public double getAsk() {
         return this.ask;
@@ -94,31 +99,34 @@ public class Option {
     public void getLastPrice(double lastPrice) {
         this.lastPrice = lastPrice;
     }
-    public void getAsk(double ask) {
+    public void setBid(double bid) {
+        this.bid = bid;
+    }
+    public void setAsk(double ask) {
         this.ask = ask;
     }
-    public void getChange(double change) {
+    public void setChange(double change) {
         this.change = change;
     }
-    public void getPercentChange(double percentChange) {
+    public void setPercentChange(double percentChange) {
         this.percentChange = percentChange;
     }
-    public void getVolume(int volume) {
+    public void setVolume(int volume) {
         this.volume = volume;
     }
-    public void getOpenInterest(int openInterest) {
+    public void setOpenInterest(int openInterest) {
         this.openInterest = openInterest;
     }
-    public void getImpliedVolatility(double impliedVolatility) {
+    public void setImpliedVolatility(double impliedVolatility) {
         this.impliedVolatility = impliedVolatility;
     }
-    public void getInTheMoney(boolean inTheMoney) {
+    public void setInTheMoney(boolean inTheMoney) {
         this.inTheMoney = inTheMoney;
     }
-    public void getContractSize(String contractSize) {
+    public void setContractSize(String contractSize) {
         this.contractSize = contractSize;
     }
-    public void getCurrency(String currency) {
+    public void setCurrency(String currency) {
         this.currency = currency;
     }
 }
