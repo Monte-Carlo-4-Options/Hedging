@@ -1,0 +1,3 @@
+,contractSymbol,lastTradeDate,strike,lastPrice,bid,ask,change,percentChange,volume,openInterest,impliedVolatility,inTheMoney,contractSize,currency
+123,SPY220414C00471000,2022-04-07 18:27:26,471.0,0.02,0.03,0.04,-0.01,-33.333336,112.0,3714.0,0.13672738281250002,False,REGULAR,USD
+124,SPY220414C00472000,2022-04-07 19:05:46,472.0,0.03,0.02,0.03,0.0,0.0,102.0,41707.0,0.13770393554687502,False,REGULAR,USD

@@ -1,0 +1,2 @@
+,contractSymbol,lastTradeDate,strike,lastPrice,bid,ask,change,percentChange,volume,openInterest,impliedVolatility,inTheMoney,contractSize,currency
+74,SPY231215P00520000,2022-03-30 19:45:55,520.0,77.91,81.06,85.33,0.0,0.0,2000.0,1936,0.16489482574462894,True,REGULAR,USD

@@ -1,0 +1,2 @@
+,contractSymbol,lastTradeDate,strike,lastPrice,bid,ask,change,percentChange,volume,openInterest,impliedVolatility,inTheMoney,contractSize,currency
+52,SPY220819P00460000,2022-04-07 19:06:44,460.0,25.96,25.83,26.74,-1.6400013,-5.9420333,24.0,2530,0.19406933868408205,True,REGULAR,USD
