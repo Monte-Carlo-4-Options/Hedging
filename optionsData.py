@@ -1,9 +1,11 @@
 import pandas as pd
 import yfinance as yf
-import requests as rq
 import re
 
 stock = yf.Ticker("SPY")
+#todays_price = stock.history(period='1d')['Close'][0] // Note: In the real context this price should be the var loss i.e change
+lower_var = 430
+higher_var = 470
 dates = ''
 try:
     stock.option_chain("")
@@ -17,7 +19,9 @@ except ValueError as e:
 
 for i in dates:
     data = stock.option_chain(i)
-    data.calls.to_csv(f"optionsData/{i}_Calls.csv")
-    data.puts.to_csv(f"optionsData/{i}_Puts.csv")
+    #((data.calls['strike'] - higher_var ) - data.calls['ask']) > 0
+    data.calls[data.calls["openInterest"] > 10][data.calls["volume"] > 10][data.calls["bid"] > .01][((higher_var - data.calls['strike']) + data.calls['ask'] <  0)].to_csv(f"optionsData/{i}_CallsWrite.csv")
+    data.calls[data.calls["openInterest"] > 10][data.calls["volume"] > 10][data.calls["bid"] > .01][((data.calls['strike'] - lower_var ) - data.calls['ask']) > 0].to_csv(f"optionsData/{i}_Calls.csv")
+    data.puts[data.puts["openInterest"] > 10][data.puts["volume"] > 10 ][data.puts["ask"] > .01][(data.puts['strike'] - lower_var) - data.puts['ask'] > 0].to_csv(f"optionsData/{i}_Puts.csv")
 
 
