@@ -7,7 +7,7 @@ public class Option {
     private double ask;
     private double change;
     private double percentChange;
-    private Integer volume;
+    private int volume;
     private int openInterest;
     private double impliedVolatility;
     private boolean inTheMoney;
@@ -17,7 +17,7 @@ public class Option {
 
 
     public Option(String contractSymbol, String lastTradeDate, int strike, double lastPrice, double bid, double ask, double change,
-                    double percentChange, Integer volume, int openInterest, double impliedVolatility, boolean inTheMoney,
+                    double percentChange, int volume, int openInterest, double impliedVolatility, boolean inTheMoney,
                     String contractSize, String currency) {
         this.contractSymbol = contractSymbol;
         this.lastTradeDate = lastTradeDate;
@@ -87,16 +87,16 @@ public class Option {
 
     /***************************Setters*******************/
 
-    public void getContractSymbol(String contractSymbol) {
+    public void setContractSymbol(String contractSymbol) {
         this.contractSymbol = contractSymbol;
     }
-    public void getLastTradeDate(String lastTradeDate) {
+    public void setLastTradeDate(String lastTradeDate) {
         this.lastTradeDate = lastTradeDate;
     }
-    public void getStrike(int strike) {
+    public void setStrike(int strike) {
         this.strike = strike;
     }
-    public void getLastPrice(double lastPrice) {
+    public void setLastPrice(double lastPrice) {
         this.lastPrice = lastPrice;
     }
     public void setBid(double bid) {
