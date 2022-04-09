@@ -26,7 +26,7 @@ public class processOptionsData {
                         Double.parseDouble(option[6]),
                         Double.parseDouble(option[7]),
                         Double.parseDouble(option[8]),
-                        (int) Double.parseDouble(option[9])),
+                        (int) Double.parseDouble(option[9]),
                         (int) Double.parseDouble(option[10]),
                         Double.parseDouble(option[11]),
                         Boolean.parseBoolean(option[12]),

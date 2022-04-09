@@ -27,12 +27,6 @@ public class Option {
         this.ask = ask;
         this.change = change;
         this.percentChange = percentChange;
-        //csv seems to sometimes not have a volume value
-        if (volume == null) {
-            this.volume = 0;
-        } else {
-            this.volume = volume;
-        }
         this.openInterest = openInterest;
         this.impliedVolatility = impliedVolatility;
         this.inTheMoney = inTheMoney;
