@@ -1,7 +1,7 @@
 public class Option {
     private String contractSymbol;
     private String lastTradeDate;
-    private int strike;
+    private double strike;
     private double lastPrice;
     private double bid;
     private double ask;
@@ -16,7 +16,7 @@ public class Option {
 
 
 
-    public Option(String contractSymbol, String lastTradeDate, int strike, double lastPrice, double bid, double ask, double change,
+    public Option(String contractSymbol, String lastTradeDate, double strike, double lastPrice, double bid, double ask, double change,
                     double percentChange, int volume, int openInterest, double impliedVolatility, boolean inTheMoney,
                     String contractSize, String currency) {
         this.contractSymbol = contractSymbol;
@@ -27,6 +27,8 @@ public class Option {
         this.ask = ask;
         this.change = change;
         this.percentChange = percentChange;
+        //csv seems to sometimes not have a volume value
+        this.volume = volume;
         this.openInterest = openInterest;
         this.impliedVolatility = impliedVolatility;
         this.inTheMoney = inTheMoney;
@@ -42,7 +44,7 @@ public class Option {
     public String getLastTradeDate() {
         return this.lastTradeDate;
     }
-    public int getStrike() {
+    public double getStrike() {
         return this.strike;
     }
     public double getLastPrice() {
@@ -87,7 +89,7 @@ public class Option {
     public void setLastTradeDate(String lastTradeDate) {
         this.lastTradeDate = lastTradeDate;
     }
-    public void setStrike(int strike) {
+    public void setStrike(double strike) {
         this.strike = strike;
     }
     public void setLastPrice(double lastPrice) {

@@ -1,6 +1,6 @@
 public class CallOption extends Option{
 
-    public CallOption(String contractSymbol, String lastTradeDate, int strike, double lastPrice, double bid, double ask, double change,
+    public CallOption(String contractSymbol, String lastTradeDate, double strike, double lastPrice, double bid, double ask, double change,
     double percentChange, int volume, int openInterest, double impliedVolatility, boolean inTheMoney,
     String contractSize, String currency) {
         super(contractSymbol, lastTradeDate, strike, lastPrice, bid, ask, change, percentChange, volume,
