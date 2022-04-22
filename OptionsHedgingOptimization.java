@@ -15,12 +15,49 @@ public class OptionsHedgingOptimization {
 
     public double bruteForceOptimize() {
         List<List<? extends Option>> lists = new ArrayList<>();
+        double maxProfit = 0.0;
         //first get containers using the subList method
         for (int i = 0; i < calls.size(); i++) {
-            List<CallOption> subListOfCalls =  calls.subList(0, i);
+            List<CallOption> subCalls =  calls.subList(0, i);
+            List<CallOption> subCallsToWrite = callsToWrite.subList(0, i);
+            List<PutOption> subPuts = puts.subList(0, i);
+
+
+            double sum = 0;
+
+
+            // Calculate option payoff for n
+            for (CallOption c: subCalls) {
+                sum += c.getValueBuy(spotPrice, strikePrice, premium);
+            }
+
+            // Calculate option payoff for m
+            for (CallOption c: subCallsToWrite) {
+                sum += c.getValueBuy(spotPrice, strikePrice, premium);
+            }
+
+            // Calculate option payoff for o
+            for (PutOption p: subPuts) {
+                sum += c.getValueBuy(spotPrice, strikePrice, premium);
+            }
+
+            if (sum > maxProfit) {
+                maxProfit = sum;
+            }
+
         }
-        return 0.0;
+        return maxProfit;
     }
+
+    // Do same thing but for minLoss, to find the option premium
+
+
+
+    ////Constraints!
+    // 1. ?
+    // 2. m <= n means calltoWrite.size() <= calls
+    // 3. n <= o means calls.size() <= puts.size()
+
 
     public double getMaxProfit() {
         return maxProfit;
